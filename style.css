@@ -1,0 +1,116 @@
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+p{
+            text-align: center;
+            background-color: pink;
+            padding: 20px;
+            border: 1px solid #ccc;
+            width: 500px;
+            margin: 0 auto;
+           font-size: 50px;
+}
+html {
+    font-size: 62.5%;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: centre;
+}
+
+.navigation{
+    height: 60rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   justify-content: space-evenly;
+   position: relative;
+}   
+
+.navigation a{
+    font-family: "righteous",cursive;
+    font-size: 5rem;
+    color:#525050;
+    /* letter-spacing: 1rem;  agar letter ke bich me space chahhiye to iska use karenge..*/
+    /* height: 100%; agar mujhe mere letter ka height badana hai to mai use karunga height ka.. */
+    /* text-align: center; agar element already centre me hai to ok agar nahi hai to use karenge text align ka.. */
+    text-shadow: 0.5rem 1rem rgba(0,0,0,.1);
+    transition: all 1s;
+}
+
+
+/* .navigation:hover ye humne set kiya jis element ko  click karenege uska color yellow dikhega our baki ka blue jaisa ki humne neeche set kiya hain */
+.navigation:hover a{
+    color: yellow;
+}
+
+/* text pe click karne ke baad jo dikhega at means jab hum uspe click karenge tab uska color change hota hua dikhega */
+.navigation a:hover{
+    color: blue;
+}
+
+
+.navigation a::before{
+    content: attr(data-text);
+    position: absolute;
+    top: 50%;
+    left:40%;
+    transform: translate(-50%,-50%);
+    width: 100rem;
+    height: 100rem;
+    background-color: red;
+    opacity: 0;  /* kisi element ki opacity ko 0 set karte hain, to wo element screen par dikhayi nahi dega, lekin wo element phir bhi us page ya design ke structure mein mojud hoga. */
+    border-radius: 50%;
+    z-index: -1;     /*flow ke uper arrow le jaane par ak ke baad ak open hoga.. */
+    display: flex;   /* CSS mein display: flex; property ka use karke aap kisi bhi element ko Flex Container banate hain. Flex container ka matlab hota hai ki aap is element ke andar dusre elements ko flexible layout mein arrange kar sakte hain. */
+    justify-content: center; 
+    align-items: center;  
+    font-size: 22rem; /*for descide all element size..*/
+    font-family: "josefin slab" sans-serif;
+    font-weight: bold;
+    color: #777; 
+    letter-spacing: 50rem;
+   transition: all 3s;   /* mai kisi transition property ko [all karta hu tab vo sabpe apply hotya hai our jo maine [3s] likha hai kisi bhi element pe click karoge to 3sec tak dikhega */
+    overflow: hidden;
+}
+
+.navigation a:hover::before {
+    content: attr(data-text);
+    width: 100rem;
+    height: 100rem;
+    left: 50%;
+    opacity: .7;
+    letter-spacing: 1rem;
+}
+
+.navigation a:nth-child(1)::before{
+    background-color: #f94144;
+}
+
+.navigation a:nth-child(2)::before{
+    background-color: #f3722c;
+}
+
+.navigation a:nth-child(3)::before{
+    background-color: #f8961e;
+}
+
+.navigation a:nth-child(4)::before{
+    background-color: #f9c74f;
+}
+
+.navigation a:nth-child(5)::before{
+    background-color: #90be6d;
+}
+
+.navigation a:nth-child(6)::before{
+    background-color: #43aa8b;
+}
